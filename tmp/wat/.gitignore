@@ -1,0 +1,10 @@
+dist
+src/public/dist
+.idea
+.DS_Store
+node_modules
+npm-debug.log
+npm-debug.log.*
+ts-dist
+coverage
+coverage-frontend

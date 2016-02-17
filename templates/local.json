@@ -1,0 +1,12 @@
+{
+  "domain": "localhost",
+  "publicDomain": "",
+  "port": 3000,
+  "publicDir": "./dist",
+  "cacheTimeout": 2592000000,
+  "cachePrivacy": "private",
+  "secret": "change",
+  "apiKey": "change",
+  "ApiVersion": "change",
+  "ApiDomain": "change"
+}

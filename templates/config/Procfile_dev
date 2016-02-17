@@ -1,0 +1,8 @@
+build_typescript: ./../node
+build_webpack: npm run webpack-dev
+build-sass: npm run sass-dev
+
+dev_typescript: npm run typescript-dev
+dev_webpack: npm run webpack-dev
+dev-sass: npm run sass-dev
+dev_server: npm run server-dev

@@ -1,0 +1,4 @@
+dev_typescript: npm run typescript-dev
+dev_webpack: npm run webpack-dev
+dev-sass: npm run sass-dev
+dev_server: npm run server-dev
