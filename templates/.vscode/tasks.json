@@ -11,18 +11,24 @@
   "version": "0.1.0",
   "name": "Project",
   "suppressTaskName": true,
-  "command": "foreman",
+  "command": "sal",
   "isShellCommand": true,
   "args": [
     "start"
   ],
   "tasks": [
     {
-      "taskName": "foreman",
+      "taskName": "run",
       "isWatching": true,
       "isBuildCommand": true,
       "args": [
-        "-f", "${workspaceRoot}/config/Procfile_dev"
+        "-rd", "${workspaceRoot}"
+      ]
+    },
+    {
+      "taskName": "test",
+      "args": [
+        "-t", "${workspaceRoot}"
       ]
     }
   ]
