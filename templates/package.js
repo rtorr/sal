@@ -47,7 +47,7 @@ module.exports = function (name) {
       'start': 'sal -r .',
       'test': 'NODE_ENV=test karma start ./config/karma.conf.js --single-run && mocha --timeout 10000'
     },
-    'author': 'rtorr <rtorruellas@gmail.com> (http://rtorr.com/)',
-    'license': 'ISC'
+    'author': 'YOUR NAME HERE)',
+    'license': 'MIT'
   }
 }

@@ -2,13 +2,43 @@
 
 var path = require('path')
 var fs = require('fs')
+var colors = require('colors/safe')
+
+console.log(colors.blue(`
+-------------------------- Sal --------------------------
+          use "sal --help" to see all options
+              https://github.com/rtorr/sal
+---------------------------------------------------------
+`))
+
 var argv = require('yargs')
-  .alias('r', 'run')
-  .alias('d', 'dev')
-  .alias('p', 'prod')
-  .alias('n', 'new')
-  .alias('k', 'kill')
-  .alias('t', 'test')
+  .option('run', {
+    alias: 'r',
+    describe: 'Run a sal application - `sal --run <path>`'
+  })
+  .option('test', {
+    alias: 't',
+    describe: 'Run your tests'
+  })
+  .option('new', {
+    alias: 'n',
+    describe: 'Create a new Sal project - `sal --new <path>`'
+  })
+  .option('dev', {
+    alias: 'd',
+    describe: 'Set process.env.NODE_ENV to dev'
+  })
+  .option('prod', {
+    alias: 'p',
+    describe: 'Set process.env.NODE_ENV to production'
+  })
+  .option('kill', {
+    alias: 'k',
+    describe: 'Kill all Sal servers (This maps to pm2)'
+  })
+  .nargs('new', 1)
+  .help('help')
+  .wrap(70)
   .argv
 
 var newProject = require('./../lib/new')
@@ -49,11 +79,10 @@ if (!ENV_DEVELOP && !ENV_PRODUCTION && !TEST) {
   process.env.NODE_ENV = 'dev'
 }
 
-console.log('enviroment:', process.env.NODE_ENV)
-
 // Run
 
 if (RUN) {
+  console.log('enviroment:', process.env.NODE_ENV)
   console.log('running project at:', RUN)
   project_path = RUN.length ? path.normalize(RUN) : '.'
   project_name = JSON.parse(fs.readFileSync(`${project_path}/package.json`)).name
@@ -66,6 +95,7 @@ if (RUN) {
 }
 
 if (TEST) {
+  console.log('enviroment:', process.env.NODE_ENV)
   project_path = TEST.length ? path.normalize(TEST) : '.'
   runProject.test(BIN, THIER_DIRECTORY, project_path)
 }
