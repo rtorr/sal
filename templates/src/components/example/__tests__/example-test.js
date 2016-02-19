@@ -1,4 +1,4 @@
-import expect from 'expect'
+import {default as expect} from 'expect'
 import { example } from './../example'
 
 describe('example test', () => {

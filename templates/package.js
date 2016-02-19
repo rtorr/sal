@@ -22,6 +22,7 @@ module.exports = function (name) {
       'winston': '^2.1.1'
     },
     'devDependencies': {
+      'es5-shim': '^4.5.4',
       'eslint': '^2.0.0-rc.0',
       'eslint-plugin-promise': '^1.0.8',
       'eslint-plugin-standard': '^1.3.2',

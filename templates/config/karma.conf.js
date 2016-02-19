@@ -1,7 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
 var webpack_conf = require('./webpack.config')
-var sal_path = require('sal').path
 
 webpack_conf.devtool = 'inline-source-map'
 webpack_conf.module.loaders.push(
@@ -31,8 +30,8 @@ module.exports = function (config) {
     reporters: [ 'mocha', 'coverage' ],
 
     files: [
-      `${sal_path}/node_modules/es5-shim/es5-shim.js`,
-      `${sal_path}/node_modules/es5-shim/es5-sham.js`,
+      './../node_modules/es5-shim/es5-shim.js',
+      './../node_modules/es5-shim/es5-sham.js',
       './tests.webpack.js'
     ],
 
