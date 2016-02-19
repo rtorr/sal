@@ -1,6 +1,10 @@
 # Sal
 
 ```
+npm install sal -g
+```
+
+```
 -------------------------- Sal --------------------------
           use "sal --help" to see all options
               https://github.com/rtorr/sal
