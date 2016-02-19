@@ -1,4 +1,4 @@
-import {default as expect} from 'expect'
+var expect = require('expect')
 import { example } from './../example'
 
 describe('example test', () => {

@@ -26,7 +26,7 @@ module.exports = function (config) {
   config.set({
 
     browsers: [ 'PhantomJS' ],
-    frameworks: [ 'mocha', 'sinon' ],
+    frameworks: [ 'mocha' ],
     reporters: [ 'mocha', 'coverage' ],
 
     files: [
