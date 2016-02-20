@@ -4,6 +4,14 @@
     "**/.git": true,
     "**/.DS_Store": true,
     "**/dist": true,
-    "**/src/public/dist": true
+    "**/src/public/dist": true,
+    "config": true,
+    ".editorconfig": true,
+    ".eslintrc": true,
+    "jsconfig.json": true,
+    "tsconfig.json": true,
+    "tsd.json": true,
+    "**/.vscode": true,
+    "**/node_modules": true
   }
 }

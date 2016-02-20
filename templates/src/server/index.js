@@ -1,8 +1,8 @@
 const path = require('app-root-path')
 const winston = require('winston')
 const express = require('express')
-const conf = require('./../lib/conf')
-const port = process.env.NODE_ENV === 'debug' ? 4231 : conf.get('port')
+const config = require('./../../config')
+const port = process.env.NODE_ENV === 'debug' ? 4231 : config.server.port
 const app = express()
 
 app.disable('x-powered-by')

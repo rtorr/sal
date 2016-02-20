@@ -12,7 +12,6 @@ module.exports = function (name) {
       'ejs': '^2.4.1',
       'express': '^4.13.4',
       'immutable': '^3.7.6',
-      'nconf': '^0.8.4',
       'pm2': '^1.0.0',
       'react': '^0.14.7',
       'react-dom': '^0.14.7',
