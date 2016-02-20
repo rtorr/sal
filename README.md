@@ -1,5 +1,7 @@
 # Sal
 
+(this project is still really new, so use at your own risk)
+
 Trying to save you from configuration. This project is not meant to be everything, but a nice place to start.
 
 ```
