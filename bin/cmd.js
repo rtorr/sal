@@ -3,13 +3,7 @@
 var path = require('path')
 var fs = require('fs')
 var colors = require('colors/safe')
-
-console.log(colors.blue(`
--------------------------- Sal --------------------------
-          use "sal --help" to see all options
-              https://github.com/rtorr/sal
----------------------------------------------------------
-`))
+var packageJson = require('./../package.json')
 
 var argv = require('yargs')
   .option('run', {
@@ -36,6 +30,10 @@ var argv = require('yargs')
     alias: 'k',
     describe: 'Kill all Sal servers (This maps to pm2)'
   })
+  .option('version', {
+    alias: 'v',
+    describe: 'print sal version'
+  })
   .nargs('new', 1)
   .help('help')
   .wrap(70)
@@ -52,6 +50,7 @@ const TEST = argv.test
 const RUN = argv.run
 const NEW_PROJECT = argv.new
 const KILL = argv.kill
+const VERSION = argv.version
 
 var project_path
 var project_name
@@ -61,6 +60,14 @@ function projectName (param) {
   return path_array[path_array.length - 1]
 }
 
+if (!VERSION) {
+  console.log(colors.blue(`
+---------------------- Sal v${packageJson.version} ----------------------
+          use "sal --help" to see all options
+              https://github.com/rtorr/sal
+---------------------------------------------------------
+`))
+}
 // Environment
 
 if (ENV_DEVELOP) {
@@ -116,4 +123,8 @@ if (NEW_PROJECT) {
 
 if (KILL) {
   runProject.kill()
+}
+
+if (VERSION) {
+  console.log(`v${packageJson.version}`)
 }
