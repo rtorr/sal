@@ -42,7 +42,7 @@ var argv = require('yargs')
 var newProject = require('./../lib/new')
 var runProject = require('./../lib/run')
 
-const THIER_DIRECTORY = process.cwd()
+const THEIR_DIRECTORY = process.cwd()
 const BIN = `${__dirname}/../node_modules/.bin`
 const ENV_DEVELOP = argv.dev
 const ENV_PRODUCTION = argv.prod
@@ -94,17 +94,17 @@ if (RUN) {
   project_path = RUN.length ? path.normalize(RUN) : '.'
   project_name = JSON.parse(fs.readFileSync(`${project_path}/package.json`)).name
   if (process.env.NODE_ENV === 'dev') {
-    runProject.runDevelop(BIN, THIER_DIRECTORY, project_path, project_name)
+    runProject.runDevelop(BIN, THEIR_DIRECTORY, project_path, project_name)
   }
   if (process.env.NODE_ENV === 'production') {
-    runProject.runProduction(BIN, THIER_DIRECTORY, project_path, project_name)
+    runProject.runProduction(BIN, THEIR_DIRECTORY, project_path, project_name)
   }
 }
 
 if (TEST) {
   console.log('enviroment:', process.env.NODE_ENV)
   project_path = TEST.length ? path.normalize(TEST) : '.'
-  runProject.test(BIN, THIER_DIRECTORY, project_path)
+  runProject.test(BIN, THEIR_DIRECTORY, project_path)
 }
 
 // New Project
