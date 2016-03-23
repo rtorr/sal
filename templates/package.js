@@ -1,3 +1,4 @@
+const sal_version = require('./../package.json').version
 module.exports = function (name) {
   return {
     'name': `${name}`,
@@ -18,7 +19,7 @@ module.exports = function (name) {
       'react': '^0.14.7',
       'react-dom': '^0.14.7',
       'react-router': '^2.0.0',
-      'sal': '^1.1.13',
+      'sal': `^${sal_version}`,
       'typescript': '^1.9.0-dev.20160210',
       'webpack': '^1.12.13',
       'welp': '^5.2.0',
