@@ -43,7 +43,7 @@ var newProject = require('./../lib/new')
 var runProject = require('./../lib/run')
 
 const THEIR_DIRECTORY = process.cwd()
-const BIN = `${__dirname}/../node_modules/.bin`
+const BIN = `${THEIR_DIRECTORY}/node_modules/.bin`
 const ENV_DEVELOP = argv.dev
 const ENV_PRODUCTION = argv.prod
 const TEST = argv.test
