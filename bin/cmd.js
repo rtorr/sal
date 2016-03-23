@@ -14,6 +14,10 @@ var argv = require('yargs')
     alias: 't',
     describe: 'Run your tests'
   })
+  .option('build', {
+    alias: 'build',
+    describe: 'build project assets'
+  })
   .option('new', {
     alias: 'n',
     describe: 'Create a new Sal project - `sal --new <path>`'
@@ -48,6 +52,7 @@ const ENV_DEVELOP = argv.dev
 const ENV_PRODUCTION = argv.prod
 const TEST = argv.test
 const RUN = argv.run
+const BUILD = argv.build
 const NEW_PROJECT = argv.new
 const KILL = argv.kill
 const VERSION = argv.version
@@ -98,6 +103,14 @@ if (RUN) {
   if (process.env.NODE_ENV === 'production') {
     runProject.runProduction(BIN, THEIR_DIRECTORY, project_path, project_name)
   }
+}
+
+// build
+
+if (RUN) {
+  console.log('enviroment:', process.env.NODE_ENV)
+  project_path = RUN.length ? path.normalize(RUN) : '.'
+  runProject.build(BIN, THEIR_DIRECTORY, project_path)
 }
 
 if (TEST) {
