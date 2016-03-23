@@ -90,7 +90,6 @@ if (!ENV_DEVELOP && !ENV_PRODUCTION && !TEST) {
 
 if (RUN) {
   console.log('enviroment:', process.env.NODE_ENV)
-  console.log('running project at:', RUN)
   project_path = RUN.length ? path.normalize(RUN) : '.'
   project_name = JSON.parse(fs.readFileSync(`${project_path}/package.json`)).name
   if (process.env.NODE_ENV === 'dev') {

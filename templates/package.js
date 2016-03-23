@@ -9,19 +9,22 @@ module.exports = function (name) {
     },
     'dependencies': {
       'app-root-path': '^1.0.0',
+      'es5-shim': '^4.5.4',
       'ejs': '^2.4.1',
       'express': '^4.13.4',
       'immutable': '^3.7.6',
       'pm2': '^1.0.0',
+      'node-sass': '^3.3.2',
       'react': '^0.14.7',
       'react-dom': '^0.14.7',
       'react-router': '^2.0.0',
       'sal': '^1.1.0',
       'welp': '^5.2.0',
-      'winston': '^2.1.1'
+      'winston': '^2.1.1',
+      'typescript': '^1.9.0-dev.20160210',
+      'webpack': '^1.12.13'
     },
     'devDependencies': {
-      'es5-shim': '^4.5.4',
       'eslint': '^2.0.0-rc.0',
       'eslint-plugin-promise': '^1.0.8',
       'eslint-plugin-standard': '^1.3.2',
@@ -36,14 +39,11 @@ module.exports = function (name) {
       'karma-sourcemap-loader': '^0.3.5',
       'karma-webpack': '^1.7.0',
       'mocha': '^2.4.5',
-      'node-sass': '^3.3.2',
       'phantomjs-prebuilt': '^2.1.4',
-      'pre-commit': '^1.1.2',
-      'typescript': '^1.9.0-dev.20160210',
-      'webpack': '^1.12.13'
+      'pre-commit': '^1.1.2'
     },
     'scripts': {
-      'start': 'sal -r .',
+      'start': 'sal -pr',
       'test': 'NODE_ENV=test karma start ./config/karma.conf.js --single-run && mocha --timeout 10000'
     },
     'author': 'YOUR NAME HERE)',
