@@ -15,7 +15,7 @@ var argv = require('yargs')
     describe: 'Run your tests'
   })
   .option('build', {
-    alias: 'build',
+    alias: 'b',
     describe: 'build project assets'
   })
   .option('new', {
@@ -107,9 +107,9 @@ if (RUN) {
 
 // build
 
-if (RUN) {
-  console.log('enviroment:', process.env.NODE_ENV)
-  project_path = RUN.length ? path.normalize(RUN) : '.'
+if (BUILD) {
+  console.log('building assets...')
+  project_path = BUILD.length ? path.normalize(BUILD) : '.'
   runProject.build(BIN, THEIR_DIRECTORY, project_path)
 }
 
