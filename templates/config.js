@@ -1,5 +1,8 @@
 var webpack = require('webpack')
 module.exports = {
+  // If  you are using Dokku, these settings will not be used.
+  // Please reffer to app.json, and know that dokku will be
+  // using port 5000
   server: {
     port: '3000',
     secret: 'change',

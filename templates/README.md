@@ -1,4 +1,24 @@
-# Sal
+# Project Name Here
+
+## Some information you should know before starting:
+
+Setting up the port for production right now is hardcoded to `5000`
+becuase I wanted this project to work with Dokku from the start.
+
+Please refer to the notes in `config.js` and `src/server/index.js`
+
+## Running this application for development
+
+```
+npm install
+sal -rd
+```
+
+## Deploying with [Dokku](http://dokku.viewdocs.io/dokku/)
+
+After you have set up your Dokku server [please follow these instructions](http://dokku.viewdocs.io/dokku/application-deployment/)
+
+## Using the `sal` commandline tool:
 
 ```
 npm install sal -g

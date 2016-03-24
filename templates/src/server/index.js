@@ -2,7 +2,12 @@ const path = require('app-root-path')
 const winston = require('winston')
 const express = require('express')
 const config = require('./../../config')
-const port = process.env.NODE_ENV === 'debug' ? 4231 : config.server.port
+
+// Please note port 5000 is hard coded to
+// port 5000 in production for use with Dokku
+// if you want to use the port settings from `config`
+// change this line below
+const port = process.env.NODE_ENV === 'production' ? 5000 : config.server.port
 const app = express()
 
 app.disable('x-powered-by')
