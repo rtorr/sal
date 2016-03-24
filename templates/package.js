@@ -8,20 +8,21 @@ module.exports = function (name) {
     'directories': {
       'test': 'test'
     },
+    'pre-commit': [
+      'sal:build',
+      'test'
+    ],
     'dependencies': {
       'app-root-path': '^1.0.0',
       'ejs': '^2.4.1',
       'es5-shim': '^4.5.4',
       'express': '^4.13.4',
       'immutable': '^3.7.6',
-      'node-sass': '^3.3.2',
       'pm2': '^1.0.0',
       'react': '^0.14.7',
       'react-dom': '^0.14.7',
       'react-router': '^2.0.0',
       'sal': `^${sal_version}`,
-      'typescript': '^1.9.0-dev.20160210',
-      'webpack': '^1.12.13',
       'welp': '^5.2.0',
       'winston': '^2.1.1'
     },
@@ -44,7 +45,7 @@ module.exports = function (name) {
       'pre-commit': '^1.1.2'
     },
     'scripts': {
-      'start': 'sal -pr',
+      'sal:build': 'sal -bp',
       'test': 'NODE_ENV=test karma start ./config/karma.conf.js --single-run && mocha --timeout 10000'
     },
     'author': 'YOUR NAME HERE)',

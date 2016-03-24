@@ -45,6 +45,7 @@ var argv = require('yargs')
 
 var newProject = require('./../lib/new')
 var runProject = require('./../lib/run')
+var badText = require('./../lib/text').badText
 
 const THEIR_DIRECTORY = process.cwd()
 const BIN = `${THEIR_DIRECTORY}/node_modules/.bin`
@@ -110,7 +111,11 @@ if (RUN) {
 if (BUILD) {
   console.log('building assets...')
   project_path = BUILD.length ? path.normalize(BUILD) : '.'
-  runProject.build(BIN, THEIR_DIRECTORY, project_path)
+  try {
+    runProject.build(BIN, THEIR_DIRECTORY, project_path)
+  } catch (error) {
+    console.log(badText('Something is probably wrong with your typescript, try manually running:', error.cmd))
+  }
 }
 
 if (TEST) {
